@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/news', function () {
-    return view('news');
-});
+Route::get('/', 'FrontController@index');
+
+
+Route::get('/news', 'FrontController@news');
+
+Auth::routes();
+
+
+
+Route::get('/home','HomeController@index')->middleware('auth');
+
+Route::get('/home/news','NewsController@index')->middleware('auth');
+
+Route::post('/home/news/store','NewsController@store')->middleware('auth');

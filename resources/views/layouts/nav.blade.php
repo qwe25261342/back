@@ -75,7 +75,15 @@
     </nav>
 </section>
 
+
+
+
+
 @yield('content')
+
+
+
+
 
 <section class="cid-qTkAaeaxX5" id="footer1-2">
 
